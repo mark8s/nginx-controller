@@ -92,7 +92,7 @@ func NewController(
 		podsSynced:     podInformer.Informer().HasSynced,
 		nginxLister:    nginxInformer.Lister(),
 		nginxSynced:    nginxInformer.Informer().HasSynced,
-		workqueue:      workqueue.NewNamedRateLimitingQueue(workqueue.DefaultControllerRateLimiter(), "Nginx"),
+		workqueue:      workqueue.NewNamedRateLimitingQueue(workqueue.DefaultControllerRateLimiter(), "Nginx"), // event handler会把event丢到workqueue里, 被processor消费
 		recorder:       recorder,
 	}
 
