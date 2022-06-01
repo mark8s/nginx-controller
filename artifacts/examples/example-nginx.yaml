@@ -1,0 +1,6 @@
+apiVersion: demo.mark8s.io/v1alpha1
+kind: Nginx
+metadata:
+  name: my-nginx
+spec:
+  replicas: 3
